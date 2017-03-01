@@ -1,0 +1,24 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Chathura|Indie+Flower|Lobster|PT+Sans|Sansita');
+
+/* 
+    Chathura -- Dezent, Schlicht, Elegant
+    Amatic SC --- very tumblr, handschrift
+    lobster --- kursiv
+    Indie Flower --- handschrift, hobby-mässig --> unprofessionell
+    PT Sans --- straight, computer-typed, professionell
+    Sansita --- eindrucksvoll, Titel
+
+    Anwendung:
+	p {
+   		 font-family: 'FONTNAME', sans-serif;   
+	}
+
+
+    Kleiner Bildschirm / Grosser Bildschirm 
+    @media screen and (min-width: 768px) {
+    
+}
+
+*/
+
