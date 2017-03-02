@@ -21,9 +21,10 @@
 }
 
 */
-p, h2 {
+p, h2, h3 {
     font-family: 'PT Sans', sans-serif;
 }
+
 
 .flex {
     display: flex;
@@ -97,8 +98,7 @@ li:hover {
     background-color: #24427a;
 }
 
-
-div {
+ div {
     margin-left: 0 !important;
 }
 
@@ -110,10 +110,8 @@ div {
 
 
 #aside i{
-   
     flex-direction: column;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
 }
 
 #spacer {
@@ -139,27 +137,64 @@ h4 {
     flex-grow: 3;
 }
 
-form {
+#form1 {
     font-family: 'PT Sans', sans-serif;
     padding: 10% 20%;
     margin: 13%;
+    margin-top: 0;
 }
 
-form input {
+#form1 input {
     margin-top: 4%;
     margin-bottom: 4%;
-    margin-left: 2%;
+    margin-left: 0;
     margin-right: 6%;
 
     
 }
+.column {
+    flex-direction: column;
+}
+
+#interrobang {
+    height: 80%;
+    padding: 2%;
+    margin-top: 0;
+}
 
 
-form [name="message"]
+#form1 [name="message"]
 {
     width: 120%;
-    height: 70%;
+    height: 30%;
+    margin-left: 0;
+    text-align: center;
 }
+
+#flexforbutton {
+    flex-direction: column;
+}
+
+.buttoninhome {
+    padding: 2% !important;
+}
+.button {
+    padding: 4.5%;
+    border-radius: 2.5px;
+    box-shadow: none;
+    background-color: #4B84A0;
+    border: none;
+    color: #bfeaff;
+
+}
+
+.button:hover, .button:focus {
+    background-color: #bfeaff;
+    color: #4B84A0;
+    cursor:pointer;
+}
+
+
 
 @media screen and (max-width: 678px) {
 

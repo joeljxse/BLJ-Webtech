@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Discussion</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/normalize.css" rel="stylesheet">
@@ -40,23 +40,42 @@
                         </aside>
 
                         <div class="flex" id="stuff">
-                            <form>
+                            <form  id="form1" action="../php/test.php" method="post">
+                             <label for="anrede">Form of Adress</label>
+                             <select autofocus="Mr." name="anrede">
+                                 <option value="Mr.">Mr.</option>
+                                 <option value="Mrs.">Mrs.</option>
+                                 <option value="Andere">Other</option>
+                             </select>   <br>
                                
-                                 <label for="vorname">Vorname</label>
-                                <input type="text" name="vorname" placeholder="Vorname..." required>
+                                 <label for="vorname">First name</label>
+                                <input type="text" name="vorname" placeholder="First name..." required>
                                 <br>
-                                <label for="name">Nachname</label>
-                                <input type="text" name="name" placeholder="Nachname...">
+                                <label for="name">Last name</label>
+                                <input type="text" name="name" placeholder="Last name...">
                                 <br>
-                                 <label for="color">Lieblingsfarbe</label>
-                                <input type="color" name="color" placeholder="Nachname...">
+                                 <label for="road">Road</label>
+                                <input type="text" name="road" placeholder="Road...">
                                 <br>
+                                <label for="place">Place</label>
+                                <input type="text" name="place" placeholder="Place...">
+                                <br>
+                                <label for="mail">E-Mail Adress</label>
+                                <input type="text" name="mail" placeholder="E-Mail...">
+                                <br>
+                                <p>Would you like a confirmation of your data?</p>
+                                <input type="radio" name="confirmation" value="true" checked> Yes<br>
+                                <input type="radio" name="confirmation" value="false"> No<br>
+                                
 
-                                 <input type="text" name="message" placeholder="Ihre Nachricht..."required>
+                                 <input type="text" name="message" placeholder="Your Message..." required>
                                  <br>
-                                <input type="submit" name="submit" value="Absenden">
+                            
+                                <input class="button" type="submit" name="submit" value="Send">
+                                <input type="reset" class="button" value="Reset">
+                            
                             </form>
-                           
+                         
                 </div>
 
         </section>
