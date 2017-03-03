@@ -16,7 +16,7 @@ $place=$_POST['place'];
 $mail=$_POST['mail'];
 $message=$_POST['message'];
 $confirmation=$_POST['confirmation'];
-$conf=$_POST['conf'];
+
     include_once('functions.php');
     db_connect();
     db_write($vorname, $name, $place, $message,$confirmation);
@@ -38,6 +38,7 @@ $conf=$_POST['conf'];
                     <li><h2><a href="../html/discussion.html">&nbsp;&nbsp;Discussion</a></h2></li>
                     <li><h2><a href="#">&nbsp;&nbsp;Gallery</a></h2></li>
                     <li><h2><a href="#">&nbsp;&nbsp;About</a></h2></li>
+                    <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Poll</a></h2></li>
                 </ul>
                 </div>
                 <div id="spacer">

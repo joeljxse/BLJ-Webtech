@@ -224,6 +224,14 @@ h4 {
     width: 100%;
 }
 
+#pollcontainer {
+    background-color: white;
+    height: 70%;
+    border-radius: 4px;
+    margin: auto;
+    
+}
+
 
 
 @media screen and (max-width: 678px) {

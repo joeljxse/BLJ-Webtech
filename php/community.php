@@ -8,7 +8,7 @@
 <link href="../css/normalize.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
   <?php
-
+                
                 include_once('functions.php');
                 db_connect();
                 
@@ -31,6 +31,7 @@
                     <li><h2><a href="#">&nbsp;&nbsp;Gallery</a></h2></li>
                     <li><h2><a href="#">&nbsp;&nbsp;About</a></h2></li>
                     <li><h2><a href="../php/community.php">&nbsp;&nbsp;Community</a></h2></li>
+                    <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Poll</a></h2></li>
                 </ul>
                 </div>
                 <div id="spacer">
@@ -53,18 +54,17 @@
    
         <div class="flex width100" id="comments">
               <div>
-                        <form action="../php/confirmation.php"  method="post">
-                            <select name="conf">
-                                <option value="true">With Confirmation</option>
-                                <option  value="false">Without Confirmation</option>
-                            </select>
-                                
+                        <form action="community.php"  method="post">
+                                <input onChange='this.form.submit();' type="radio" name="conf" value="true" >  With confirmation</input><br><br>
+                                <input  onChange='this.form.submit();' type="radio" name="conf" value="false"> Without confirmation</input>
+                               
+                               
                                 </form>
                         </div>
            <div class="width100">
             <?php
-                
-                 db_read();
+                $conf=$_POST['conf'];
+                db_read($conf);
                 db_close();
            ?>
               </div>
