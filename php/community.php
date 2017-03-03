@@ -8,8 +8,10 @@
 <link href="../css/normalize.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
   <?php
+
                 include_once('functions.php');
                 db_connect();
+                
             ?>
 </head>
 <body id="community">
@@ -19,6 +21,7 @@
 <section id="content">
 
     <div class="flex" id="mainflex">
+        
             
             <aside id="aside" class="flex">
                 <div id="list">
@@ -49,8 +52,18 @@
             </aside>
    
         <div class="flex width100" id="comments">
+              <div>
+                        <form action="../php/confirmation.php"  method="post">
+                            <select name="conf">
+                                <option value="true">With Confirmation</option>
+                                <option  value="false">Without Confirmation</option>
+                            </select>
+                                
+                                </form>
+                        </div>
            <div class="width100">
             <?php
+                
                  db_read();
                 db_close();
            ?>

@@ -5,9 +5,9 @@
         $dbObj =  new mysqli('localhost','root','','webtech');
     }
 
-    function db_write($firstname, $name, $place, $message){
+    function db_write($firstname, $name, $place, $message, $confirmation){
         global $dbObj;
-        $sql = "INSERT INTO table1(firstname, name, place, message) VALUES ('$firstname', '$name', '$place', '$message')";
+        $sql = "INSERT INTO table1(firstname, name, place, message,confirmation) VALUES ('$firstname', '$name', '$place', '$message',$confirmation)";
         $dbObj->query($sql);
     }
 
@@ -18,13 +18,17 @@
 
            
             foreach ($result as $temp) {
+                {
                 echo "<div class=comment>";
                 echo "<h3>User #".$temp['id']."</h3>";
                     echo "<p>Name: ".$temp['firstname']." ";
                     echo $temp['name']."<br></p>";
                     echo "<p>From: ".$temp['place']. "</p>";
                     echo "<br><p>Their Message: <br><br>".$temp['message']. "</p>";
+                    echo $temp['confirmation'];
                 echo "</div>";
+                }
+                
             }
             
 
