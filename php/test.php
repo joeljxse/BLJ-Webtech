@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,11 +78,18 @@ $confirmation=$_POST['confirmation'];
                             <?php endif ?>
                 
                     </div>
+                <div class="flex">
+                    <div>
                     <form action="../html/index.html">
-                        <input class="button" type="submit" value="Back to Home">
+                        <input class="button" type="submit" value="Go back to Home">
                         </form>
-                        </div>
-
+                </div>
+                     <div>
+                    <form action="../html/community.php">
+                        <input class="button" type="submit" value="See all messages">
+                        </form>
+                </div>
+</div>
 </section>
 
 </body>
