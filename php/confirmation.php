@@ -16,7 +16,7 @@ $place=$_POST['place'];
 $mail=$_POST['mail'];
 $message=$_POST['message'];
 $confirmation=$_POST['confirmation'];
-$conf=$POST['conf'];
+$conf=$_POST['conf'];
     include_once('functions.php');
     db_connect();
     db_write($vorname, $name, $place, $message,$confirmation);

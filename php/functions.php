@@ -13,12 +13,16 @@
 
     function db_read(){
         global $dbObj;
-        $sql = "SELECT * FROM table1";
+        $sql1 = "SELECT * FROM table1 WHERE ;
+        $sql2 
          $result = $dbObj->query($sql);
 
            
             foreach ($result as $temp) {
                 {
+
+              
+                
                 echo "<div class=comment>";
                 echo "<h3>User #".$temp['id']."</h3>";
                     echo "<p>Name: ".$temp['firstname']." ";
@@ -28,6 +32,7 @@
                     echo $temp['confirmation'];
                 echo "</div>";
                 }
+                
                 
             }
             
