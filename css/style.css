@@ -225,14 +225,27 @@ h4 {
 }
 
 #pollcontainer {
-    background-color: white;
+    
     height: 70%;
     border-radius: 4px;
-    margin: auto;
+    
     
 }
 
 
+
+#pollcontainer form {
+    padding: 10% 30%;
+    padding-left: 20%;
+    margin: 0 4%;
+    margin-left: 0;
+    width: 60%;
+}
+
+#pollcontainer form .button {
+    padding: 2% 10%;
+    
+}
 
 @media screen and (max-width: 678px) {
 
