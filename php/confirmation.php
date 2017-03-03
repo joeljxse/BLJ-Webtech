@@ -7,10 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../css/normalize.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-</head>
-<body id="discussion">
-
-<?php 
+<?php
 $anrede=$_POST['anrede'];
 $vorname=$_POST['vorname'];
 $name=$_POST["name"];
@@ -19,8 +16,15 @@ $place=$_POST['place'];
 $mail=$_POST['mail'];
 $message=$_POST['message'];
 $confirmation=$_POST['confirmation'];
-
+    include_once('functions.php');
+    db_connect();
+    db_write($vorname, $name, $place, $message);
+    db_close();
 ?>
+</head>
+<body id="confirmation">
+
+
 
 <section id="content">
 
@@ -85,7 +89,7 @@ $confirmation=$_POST['confirmation'];
                         </form>
                 </div>
                      <div>
-                    <form action="../html/community.php">
+                    <form action="../php/community.php">
                         <input class="button" type="submit" value="See all messages">
                         </form>
                 </div>
