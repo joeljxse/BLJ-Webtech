@@ -39,6 +39,7 @@ $confirmation=$_POST['confirmation'];
                     <li><h2><a href="#">&nbsp;&nbsp;Gallery</a></h2></li>
                     <li><h2><a href="#">&nbsp;&nbsp;About</a></h2></li>
                     <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Poll</a></h2></li>
+                    <li><h2><a href="../php/pollresults.php">&nbsp;&nbsp;Poll Results</a></h2></li>
                 </ul>
                 </div>
                 <div id="spacer">

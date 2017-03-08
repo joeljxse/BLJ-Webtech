@@ -41,6 +41,7 @@
                                 <li><h2><a href="#">&nbsp;&nbsp;About</a></h2></li>
                                 <li><h2><a href="../php/community.php">&nbsp;&nbsp;Community</a></h2></li>
                                 <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Poll</a></h2></li>
+                                <li><h2><a href="../php/pollresults.php">&nbsp;&nbsp;Poll Results</a></h2></li>
                             </ul>
                             </div>
                             <div id="spacer">

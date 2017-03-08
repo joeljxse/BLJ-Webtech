@@ -25,9 +25,22 @@ p, h2, h3 {
     font-family: 'PT Sans', sans-serif;
 }
 
+#list a {
+    display: block;
+    padding: 3px 0;
+   
+    height: 100%;
+
+}
+#list h2 {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
 
 .flex {
     display: flex;
+    
 }
 
  #content {
@@ -251,6 +264,7 @@ h4 {
     border-radius: 3px;
     width: 95%;
     margin-bottom: 3%;
+   
 }
 @media screen and (max-width: 678px) {
 

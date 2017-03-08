@@ -27,8 +27,11 @@
              $result=$dbObj->query($sql);     
         }
            
-            echo "<div id='results'>";
+           
             foreach ($result as $temp) {
+                   echo "<div id='results'>";
+                
+                
                     echo "<h2>";
                         echo $temp['vorname'] . " " . $temp['nachname'];
                     echo"<br>";
@@ -78,10 +81,10 @@
                         echo "<br>";
                         
                         
-                                        
+                echo "</div>";                         
                                         
                                         }
-                echo "</div>";
+               
                 
             }
             
