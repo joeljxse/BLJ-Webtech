@@ -6,26 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/normalize.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
-        <?php 
-            include_once('functions2.php');
-            $antwort1=$_POST['frage1'];
-            $antwort2=$_POST['frage2'];
-            $antwort3=$_POST['frage3'];
-            $antwort4=$_POST['frage4'];
-            $antwort5=$_POST['frage5'];
-            $antwort6=$_POST['frage6'];
-            $antwort7=$_POST['frage7'];
-            $antwort8=$_POST['frage8'];
-            $vorname=$_POST['firstname'];
-            $nachname=$_POST['lastname'];
-            $age=$_POST['age'];
-           
-              
-            db_connect();
-            db_write($vorname,$nachname,$age, $antwort1,$antwort2,$antwort3,$antwort4,$antwort5,$antwort6,$antwort7,$antwort8);
-            db_close();
-        
-        ?>
+      <?php include_once('functions2.php'); ?>
     </head>
     <body id="poll">
         <section id="content">
@@ -63,13 +44,16 @@
 
                     
                          <div>
-                             <form action="pollresults.php"  method="post">
-                                <input onChange='this.form.submit();' type="radio" name="result" value="all" >  Alle Ergebnisse</input><br><br>
+                            
+                           <?php
+                           db_connect();
+                            $result=$_POST['result'];
+                            db_read($result);
+                           db_close();
                                 
                                
-                    
-                                </form>
-                        
+                    ?>
+                     
                          </div>
 
                                
