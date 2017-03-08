@@ -31,6 +31,8 @@
       
            
             foreach ($result as $temp) {
+                if($temp['vorname']==""){} 
+                else {
                    echo "<div id='results'>";
                 
                 
@@ -83,7 +85,7 @@
                         echo "<br>";
                         
                         
-                echo "</div>";                         
+                echo "</div>";                         }
                                         
                                         }
                

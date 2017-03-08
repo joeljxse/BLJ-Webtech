@@ -31,8 +31,8 @@
                     <li><h2><a href="#">&nbsp;&nbsp;Gallery</a></h2></li>
                     <li><h2><a href="#">&nbsp;&nbsp;About</a></h2></li>
                     <li><h2><a href="../php/community.php">&nbsp;&nbsp;Community</a></h2></li>
-                    <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Poll</a></h2></li>
-                    <li><h2><a href="../php/pollresults.php">&nbsp;&nbsp;Poll Results</a></h2></li>
+                    <li><h2><a href="../html/poll.html">&nbsp;&nbsp;Umfrage</a></h2></li>
+                    <li><h2><a href="../php/pollresults.php">&nbsp;&nbsp;Umfrage Ergebnisse</a></h2></li>
                 </ul>
                 </div>
                 <div id="spacer">
@@ -41,7 +41,7 @@
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                     <i class="fa fa-google-plus-square" aria-hidden="true"></i>
                     <i class="fa fa-twitter" aria-hidden="true"></i>
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
 
                     
                 </div>

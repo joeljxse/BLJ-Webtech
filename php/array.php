@@ -1,29 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <?php
-            $name=$_POST['name'];
-            $vorname=$_POST['vorname'];
+<?php
 
-            $array1 =array(array($name,$vorname));
-            
-            
-            echo $array1[0][0];
-            echo $array1[0][1];
-            echo $array1[1][0];
-            echo $array1[1][1];
-            
+        $array1 = array(
+                            array('Hans', 'Muster'),
+                            array('Peter','Test'),
+                            array('Ben','Tester'),
+                            array('Leon','Testest'),
+                            array('Johanna','Tess'),
+                        );
 
+        $handy = []
+                        
 
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>Vorname</th><th>Nachname</th>";
+                        echo "</tr>";
+
+                        foreach($array1 as $temp) {
+                            echo "<tr>";
+
+                                    foreach($temp as $temp2){
+                                            
+                                            echo "<td>"; 
+                                            echo $temp2. " ";
+                                            echo "</td>";
+                                            } 
+                               
+                            echo "</tr>";
  
-        ?>    
-    </body>
-</html>
+                        }
+                        echo "</table>";
 
 
+?>

@@ -266,6 +266,11 @@ h4 {
     margin-bottom: 3%;
    
 }
+#error {
+    display: none;
+}
+
+
 @media screen and (max-width: 678px) {
 
  
