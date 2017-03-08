@@ -64,12 +64,7 @@
 
                     
                          <div>
-                             <form action="pollresults.php"  method="post">
-                                <input onChange='this.form.submit();' type="radio" name="result" value="all" >  Alle Ergebnisse</input><br><br>
-                                
-                               
-                    
-                                </form>
+                             
                         
                          </div>
 

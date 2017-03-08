@@ -87,5 +87,15 @@
                
                 
             }
+
+
+            function options(){
+                global $dbObj;
+                $sql = "SELECT vorname FROM umfrage"; 
+                $result = $dbObj->query($sql);
+                foreach ($result as $temp) {
+                    echo "<option>" . $temp['vorname'] . "</option>";
+                }
+            }
             
     ?>
