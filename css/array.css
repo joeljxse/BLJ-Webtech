@@ -1,0 +1,26 @@
+table {
+    background-color: #ffffb0;
+    margin: 0;
+    
+}
+table, tr, td, th{
+    border: 1px solid #eeee5b;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px 20px;
+}
+
+th {
+    padding: 10px 50px;
+}
+html, body {
+    margin: 0;
+}
+
+form {
+   text-align: center;
+    
+    margin-top: 10%;
+}
