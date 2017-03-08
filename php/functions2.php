@@ -17,16 +17,18 @@
         $dbObj->query($sql);
      }
 
-    function db_read($result){
+    function db_read(){
         global $dbObj;
         
         $sql="SELECT * FROM umfrage";
        
 
-        if ($result="all") {
+      
              $result=$dbObj->query($sql);     
-        }
-           
+    
+        
+        
+      
            
             foreach ($result as $temp) {
                    echo "<div id='results'>";
@@ -89,13 +91,5 @@
             }
 
 
-            function options(){
-                global $dbObj;
-                $sql = "SELECT vorname FROM umfrage"; 
-                $result = $dbObj->query($sql);
-                foreach ($result as $temp) {
-                    echo "<option>" . $temp['vorname'] . "</option>";
-                }
-            }
             
     ?>

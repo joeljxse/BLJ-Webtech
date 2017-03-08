@@ -20,6 +20,7 @@
             $nachname=$_POST['lastname'];
             $age=$_POST['age'];
            
+           
               
             db_connect();
             db_write($vorname,$nachname,$age, $antwort1,$antwort2,$antwort3,$antwort4,$antwort5,$antwort6,$antwort7,$antwort8);
@@ -64,7 +65,16 @@
 
                     
                          <div>
-                             
+                                <form action="pollresults.php"  method="post">
+                                <input onChange='this.form.submit();' type="radio" name="result" value="all" >  Alle Ergebnisse</input><br><br>
+                                 <select onChange='this.form.submit();'>
+                                     
+                                  <?php db_connect(); options(); db_close(); ?>
+                                 </select><br><br>
+                                
+                               
+                    
+                                </form>
                         
                          </div>
 

@@ -45,21 +45,18 @@
 
                     
                          <div>
-                            <form action="pollresults.php"  method="post">
-                                <input onChange='this.form.submit();' type="radio" name="result" value="all" >  Alle Ergebnisse</input><br><br>
-                                 <select>
-                                     
-                                  <?php db_connect(); options(); db_close(); ?>
-                                 </select><br><br>
-                                
+                           
                                
+                                  <?php db_connect(); db_close(); ?>
+                                 
                     
-                                </form>
+                               
                            <?php
                            
                            db_connect();
-                            $result=$_POST['result'];
-                            db_read($result);
+                           
+                          
+                           db_read();
                            db_close();
                                 
                                
