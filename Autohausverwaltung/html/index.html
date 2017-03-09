@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Autohausverwaltung</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body>
+           
+      
+                    <nav>
+                      
+                        <ul id="navlist" class="flex">
+                            <li id="homeli"><a href="index.html" name="Home">Home</a></li>
+                            <li id="autoli"><a href="../php/auto.php" name="Vorhandene Autos">Vorhandene Autos</a></li>
+                        </ul>
+                       
+                    </nav>
+   
+ <section id="content">
+
+
+
+               
+                    <h1> <i>Wilkommen bei Autohaus Blumenstrauss!</i> </h1>
+                    <h3> Tragen sie Ihr Auto ein:</h3>
+                    <form action="../php/auto.php" method="post">
+                        <table>
+                            <tr>
+                                <td> Vorname:&nbsp;&nbsp;&nbsp;</td>
+                                <td class="tdinput"> <input type="text" name="vorname" ></td>
+                            </tr>
+                            <tr>
+                                <td>Nachname:&nbsp;&nbsp;&nbsp;</td>
+                                <td class="tdinput"> <input type="text" name="nachname" >   </td>
+                            </tr>
+                            <tr>
+                                <td>Auto:&nbsp;&nbsp;&nbsp;</td>
+                                <td class="tdinput"><input type="text" name="autoname" ></td>
+                            </tr>
+                        </table>
+                        
+                         
+                         <input type="submit" name="submit" value="Eintragen!">
+                    </form>
+
+                
+
+
+
+
+
+
+
+
+                    
+            </section>
+    </body>
+</html>
