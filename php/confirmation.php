@@ -8,14 +8,14 @@
 <link href="../css/normalize.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <?php
-$anrede=$_POST['anrede'];
-$vorname=$_POST['vorname'];
-$name=$_POST["name"];
-$road=$_POST['road'];
-$place=$_POST['place'];
-$mail=$_POST['mail'];
-$message=$_POST['message'];
-$confirmation=$_POST['confirmation'];
+$anrede=htmlspecialchars($_POST['anrede']);
+$vorname=htmlspecialchars($_POST['vorname']);
+$name=htmlspecialchars($_POST["name"]);
+$road=htmlspecialchars($_POST['road']);
+$place=htmlspecialchars($_POST['place']);
+$mail=htmlspecialchars($_POST['mail']);
+$message=htmlspecialchars($_POST['message']);
+$confirmation=htmlspecialchars($_POST['confirmation']);
 
     include_once('functions.php');
     db_connect();

@@ -11,17 +11,17 @@
            
             include_once('functions2.php'); ?>
              <p id="error"><?php
-                                        $antwort1=$_POST['frage1'];
-                                        $antwort2=$_POST['frage2'];
-                                        $antwort3=$_POST['frage3'];
-                                        $antwort4=$_POST['frage4'];
-                                        $antwort5=$_POST['frage5'];
-                                        $antwort6=$_POST['frage6'];
-                                        $antwort7=$_POST['frage7'];
-                                        $antwort8=$_POST['frage8'];
-                                        $vorname=$_POST['firstname'];
-                                        $nachname=$_POST['lastname'];
-                                        $age=$_POST['age'];?> </p>
+                                        $antwort1=htmlspecialchars($_POST['frage1']);
+                                        $antwort2=htmlspecialchars($_POST['frage2']);
+                                        $antwort3=htmlspecialchars($_POST['frage3']);
+                                        $antwort4=htmlspecialchars($_POST['frage4']);
+                                        $antwort5=htmlspecialchars($_POST['frage5']);
+                                        $antwort6=htmlspecialchars($_POST['frage6']);
+                                        $antwort7=htmlspecialchars($_POST['frage7']);
+                                        $antwort8=htmlspecialchars($_POST['frage8']);
+                                        $vorname=htmlspecialchars($_POST['firstname']);
+                                        $nachname=htmlspecialchars($_POST['lastname']);
+                                        $age=htmlspecialchars($_POST['age']);?> </p>
                                                             
             
     </head>

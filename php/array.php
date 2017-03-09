@@ -10,10 +10,10 @@
    
   
 <?php
-        $vorname=$_POST['vorname'];
-        $nachname=$_POST['nachname'];
-        $handy=$_POST['handy'];
-        $telefon=$_POST['telefon'];
+        $vorname=htmlspecialchars($_POST['vorname']);
+        $nachname=htmlspecialchars($_POST['nachname']);
+        $handy=htmlspecialchars($_POST['handy']);
+        $telefon=htmlspecialchars($_POST['telefon']);
 
 
         $array1 = array(
@@ -60,9 +60,7 @@
         <input type="number" name="handy"> Handy<br><br><br><br>
         <input type="number" name="telefon"> Telefon<br><br><br><br>
         <input type="submit"value="hinzufügen">
-        <?php 
-        $array1[][$vorname, $nachname, 'handy'=> $handy, 'telefon' => $telefon];
-        ?>
+       
     </form>
 </body>
 </html>
