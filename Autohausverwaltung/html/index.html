@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+       
         <title>Autohausverwaltung</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,18 +14,21 @@
                       
                         <ul id="navlist" class="flex">
                             <li id="homeli"><a href="index.html" name="Home">Home</a></li>
-                            <li id="autoli"><a href="../php/auto.php" name="Vorhandene Autos">Vorhandene Autos</a></li>
+                            <li id="autoli"><a href="../php/auto.php" name="Autos">Autos</a></li>
                         </ul>
                        
                     </nav>
    
- <section id="content">
+ <section class="content">
 
 
 
                
-                    <h1> <i>Wilkommen bei Autohaus Blumenstrauss!</i> </h1>
-                    <h3> Tragen sie Ihr Auto ein:</h3>
+                    <h1 class="center"> <i>Wilkommen bei Autohaus Blumenstrauss!</i> </h1>
+               <div class="flex" id="flexforhome">     
+                <div>
+                    <h2>Neuer Kunde: </h2>
+                    <h3> Tragen sie Ihr neues Auto ein:</h3>
                     <form action="../php/auto.php" method="post">
                         <table>
                             <tr>
@@ -42,11 +46,21 @@
                         </table>
                         
                          
-                         <input type="submit" name="submit" value="Eintragen!">
+                         <input class="center" type="submit" name="submit" value="Eintragen!">
                     </form>
 
-                
-
+                </div>
+                <div>
+                     <h2>Vorhandener Kunde: </h2>
+                    <h3> Haben sie ein neues Auto welches sie abgeben möchten?</h3>
+                    <form action="../php/oldcustomer.php" method="post">
+                       
+                        
+                         
+                         <input id="oldcustomerbutton" type="submit" name="submit" value="Klicken sie hier!">
+                    </form>
+                </div>
+               </div>
 
 
 
@@ -58,3 +72,5 @@
             </section>
     </body>
 </html>
+
+

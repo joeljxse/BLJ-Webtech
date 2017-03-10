@@ -30,6 +30,11 @@
             }
         }
 
+        public function getFullName(){
+           return $this->vorname . $this->nachname;
+            
+        }
+
     }
 
 

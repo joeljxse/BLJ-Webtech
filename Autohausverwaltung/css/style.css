@@ -37,7 +37,7 @@ nav ul li{
     
 }
 
-#content {
+.content {
     background-color: white;
     margin: 7% auto;
     width: 70%;
@@ -84,3 +84,18 @@ td {
 .bye {
     border: white 3px solid !important;
 }
+
+#flexforhome {
+    justify-content: space-around;
+}
+
+.center {
+    text-align: center;
+}
+
+#oldcustomerbutton {
+    padding:  3% 10%;
+    margin-left: 27%;
+}
+
+#disappear {display: none}

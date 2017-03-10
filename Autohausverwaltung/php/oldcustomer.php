@@ -1,24 +1,17 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Autohausverwaltung</title>
+        <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/style.css" rel="stylesheet">
-
-        <?php
-                 include_once('functions.php');
-                 $vorname=htmlspecialchars($_POST['vorname']);
-                 $nachname=htmlspecialchars($_POST['nachname']);
-                 $autoname=htmlspecialchars($_POST['autoname']);
-                 
-               
-
-
-               
-    ?>
     </head>
     <body>
+       
+          
+            
+
             <nav>
                       
                         <ul id="navlist" class="flex">
@@ -26,14 +19,27 @@
                             <li id="autoli"><a href="../php/auto.php" name="Autos">Autos</a></li>
                         </ul>
                        
-                    </nav>
-<?php
+                    </nav>    
 
 
- echo ausgabe($autoname, $vorname,$nachname);
+<section class="content">
+    <h2> Tragen sie hier Ihr neues Auto ein:</h2>
+        <?php
+      
+            include_once('functions.php');
+            echo "<h2> Ihr Name: </h2> ";
+       
+            echo "<select>";
+            echo "<option>";
+                echo getOldNames();
+                echo "</option>";
+            echo "</select>";
+        
+        
 
- ?>
 
+        ?>
 
-</body>
+    </section>
+    </body>
 </html>
