@@ -5,22 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/style.css" rel="stylesheet">
-
-        <?php
-                 include_once('functions.php');
-                 $vorname=htmlspecialchars($_POST['vorname']);
-                 $nachname=htmlspecialchars($_POST['nachname']);
-                 $autoname=htmlspecialchars($_POST['autoname']);
-                 $oldvorname=htmlspecialchars($_POST['oldvorname']);
-                 $oldnachname=htmlspecialchars($_POST['oldnachname']);
-                 $oldautoname=htmlspecialchars($_POST['oldautoname']);
-                 
-               
-
-
-               
-    ?>
-    </head>
+</head>
     <body>
             <nav>
                       
@@ -30,12 +15,31 @@
                         </ul>
                        
                     </nav>
-<?php
+        <?php
+                // error_reporting(0);
+                 include_once('functions.php');
 
 
- echo ausgabe($autoname, $vorname,$nachname,$oldvorname,$oldnachname,$oldautoname);
+                        $vorname=htmlspecialchars($_POST['vorname']);  
+                        $nachname=htmlspecialchars($_POST['nachname']);
+                        $autoname=htmlspecialchars($_POST['autoname']);
+                        $oldvorname=htmlspecialchars($_POST['oldvorname']);
+                        $oldnachname=htmlspecialchars($_POST['oldnachname']);
+                        $oldautoname=htmlspecialchars($_POST['oldautoname']);
         
- ?>
+          
+
+          
+
+
+
+                echo ausgabe($autoname, $vorname,$nachname,$oldvorname,$oldnachname,$oldautoname);
+
+               
+               
+    ?>
+
+
 
 
 </body>

@@ -19,6 +19,7 @@
     }
 
         public function addAuto($autoname){
+            
             $this->autos[] = new Auto($autoname);
         }
 
@@ -27,11 +28,16 @@
         public function getAutos(){
             
             foreach ($this->autos as $temp) {
-                return $temp->getAutoname();
+            
+                echo $temp->getAutoname();
+                echo "<br>";
+               
 
             }
         }
-
+        public function getFullname(){
+            return $this->vorname . " " . $this->nachname;
+        }
 
     }
 

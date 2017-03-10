@@ -41,25 +41,27 @@
             $autobesitzer =$_SESSION['besitzer'];        
 
                if(null!= $vorname && null!= $nachname){
-                $autobesitzer[] = new Autobesitzer($vorname, $nachname);
+                   
+                  $autobesitzer[] = new Autobesitzer($vorname, $nachname);
+                
                 
                }
 
- 
+              
+               if(null!=$oldvorname && null!=$oldnachname){
             
                 foreach($autobesitzer as $temp){
                         
                    
                     if(($temp->getVorname() == $oldvorname) && ($temp->getNachname() == $oldnachname)){
-                            echo $temp->getVorname();
-                            echo $temp->getNachname();
-                            echo "ente";
+                       
+                            
                             $temp->addAuto($oldautoname);
                         }
                 }
 
             
-             
+               }
              
             echo '<table id="ausgabe" >';
                  echo "<tr>";
@@ -69,16 +71,23 @@
                     echo "<th>Vorname</th>";
                     echo "<th>Nachname</th>";
                     echo "<th>Autoname</th>";
+                    echo "<th>~//~</th>";
                 echo "</tr>";
                 
 
-                foreach($autobesitzer as $temp){
-                   
+                foreach($autobesitzer as $index=>$temp){
+                  
                     echo "<tr>";
-                        $temp->addAuto($autoname);
+                    if ($temp->getVorname() == $vorname && $temp->getNachname() == $nachname){
+                        $temp->addAuto($autoname);}
                         echo "<td>"; echo $temp->getVorname(); echo "</td>";
                         echo "<td>"; echo $temp->getNachname(); echo "</td>";
                         echo "<td>"; echo $temp->getAutos(); echo "</td>";
+                        echo "<td>"; 
+                            echo "<form action='bearbeiten.php' method='post'>";
+                               echo "<button name='edit' value='". $index."'>Bearbeiten</button>";
+                            echo "</form>";
+                         echo "</td>";
                     echo "</tr>";
                
                 }
@@ -92,7 +101,7 @@
             }
        
  
- 
+            
  
 
 //------------------------------------------------------------------------------------------------------------------------------------------
