@@ -48,3 +48,39 @@ nav ul li{
 td {
     padding: 10% 0;
 }
+
+
+#ausgabe {
+    background-color: white;
+    width: 70%;
+    margin: 10% auto;
+    padding: 10%;
+    border-radius: 5px;
+    border: solid 1px black;
+
+}
+
+
+
+#ausgabe tr {
+    text-align: center;
+    font-size: 1.5rem;
+       
+}
+
+#ausgabe td, #ausgabe th {
+    border: solid 1px black;
+    
+}
+
+#imhaus {
+    border: none;
+    font-size: 2rem;
+    
+    
+
+}
+
+.bye {
+    border: white 3px solid !important;
+}
