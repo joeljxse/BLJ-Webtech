@@ -93,9 +93,12 @@ td {
     text-align: center;
 }
 
-#oldcustomerbutton {
-    padding:  3% 10%;
-    margin-left: 27%;
+.oldcustomerbutton {
+    padding:  2% 7%;
+    
+}
+.newcustomerbutton {
+    padding:  4% 14%;
 }
 
 #disappear {display: none}

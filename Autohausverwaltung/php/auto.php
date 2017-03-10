@@ -11,6 +11,9 @@
                  $vorname=htmlspecialchars($_POST['vorname']);
                  $nachname=htmlspecialchars($_POST['nachname']);
                  $autoname=htmlspecialchars($_POST['autoname']);
+                 $oldvorname=htmlspecialchars($_POST['oldvorname']);
+                 $oldnachname=htmlspecialchars($_POST['oldnachname']);
+                 $oldautoname=htmlspecialchars($_POST['oldautoname']);
                  
                
 

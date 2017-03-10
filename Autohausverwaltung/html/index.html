@@ -46,18 +46,30 @@
                         </table>
                         
                          
-                         <input class="center" type="submit" name="submit" value="Eintragen!">
+                         <input class="newcustomerbutton" type="submit" name="submit" value="Eintragen!">
                     </form>
 
                 </div>
                 <div>
-                     <h2>Vorhandener Kunde: </h2>
+                     <h2>Zurückkehrender Kunde? </h2>
                     <h3> Haben sie ein neues Auto welches sie abgeben möchten?</h3>
-                    <form action="../php/oldcustomer.php" method="post">
-                       
-                        
-                         
-                         <input id="oldcustomerbutton" type="submit" name="submit" value="Klicken sie hier!">
+                    <form action="../php/auto.php" method="post">
+                    <table>
+                        <tr>
+                              <td>  <label for="oldvorname">Vorname: </label></td>
+                                <td><input type="text" name="oldvorname" ></td>
+                        </tr>
+                        <tr>
+                                 <td>   <label for="oldnachname">Nachname: </label></td>
+                       <td>         <input type="text" name="oldnachname" ></td>
+                        </tr>
+                        <tr>
+                                <td><label for="oldautoname">Neues Auto: </label></td>
+                                <td><input type="text" name="oldautoname" ></td>
+                        </tr>
+                        </table>    
+                         <input class="oldcustomerbutton" type="submit" name="submit" value="Klicken sie hier!">
+                    
                     </form>
                 </div>
                </div>

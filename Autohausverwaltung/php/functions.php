@@ -35,13 +35,11 @@
 
 // Array Version ----------------------------------------------------------------------------------------------------------
 
-
+  
      function ausgabe($autoname, $vorname, $nachname){
-              
-                   
-             global  $autobesitzer;
-             $autobesitzer =$_SESSION['besitzer']; 
-             
+            
+            $autobesitzer =$_SESSION['besitzer'];        
+
                if(null!= $vorname && null!= $nachname){
                 $autobesitzer[] = new Autobesitzer($vorname, $nachname);
                  }           
@@ -58,7 +56,7 @@
                 echo "</tr>";
                 
 
-                foreach ($autobesitzer as $temp){
+                foreach($autobesitzer as $temp){
                     echo "<tr>";
                         $temp->addAuto($autoname);
                         echo "<td>"; echo $temp->getVorname(); echo "</td>";
@@ -69,25 +67,13 @@
                 }
             echo "</table>";
      
-            global $_SESSION;
+            
              
-           $_SESSION['besitzer']=$autobesitzer;           
+            $_SESSION['besitzer']=$autobesitzer;              
+              
      }
 
-           
-         function getOldNames(){
-                global $autobesitzer;
-                        $autobesitzer =$_SESSION['besitzer']; 
-                                foreach($autobesitzer as $temp){
-                                        return $temp->getFullName();
-                                        
-                                    }
-
-                          $_SESSION['besitzer']=$autobesitzer;    
-                         
-                    }   
-
-
+       
  
  
  
