@@ -33,8 +33,8 @@
 <?php
 
 
- echo ausgabe($autoname, $vorname,$nachname);
-
+ echo ausgabe($autoname, $vorname,$nachname,$oldvorname,$oldnachname,$oldautoname);
+        
  ?>
 
 

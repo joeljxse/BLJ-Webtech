@@ -21,6 +21,8 @@
         public function addAuto($autoname){
             $this->autos[] = new Auto($autoname);
         }
+
+       
         
         public function getAutos(){
             
@@ -30,10 +32,6 @@
             }
         }
 
-        public function getFullName(){
-           return $this->vorname . $this->nachname;
-            
-        }
 
     }
 

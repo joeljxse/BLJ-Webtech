@@ -36,13 +36,29 @@
 // Array Version ----------------------------------------------------------------------------------------------------------
 
   
-     function ausgabe($autoname, $vorname, $nachname){
+     function ausgabe($autoname, $vorname, $nachname,$oldvorname,$oldnachname,$oldautoname){
             
             $autobesitzer =$_SESSION['besitzer'];        
 
                if(null!= $vorname && null!= $nachname){
                 $autobesitzer[] = new Autobesitzer($vorname, $nachname);
-                 }           
+                
+               }
+
+ 
+            
+                foreach($autobesitzer as $temp){
+                        
+                   
+                    if(($temp->getVorname() == $oldvorname) && ($temp->getNachname() == $oldnachname)){
+                            echo $temp->getVorname();
+                            echo $temp->getNachname();
+                            echo "ente";
+                            $temp->addAuto($oldautoname);
+                        }
+                }
+
+            
              
              
             echo '<table id="ausgabe" >';
@@ -57,6 +73,7 @@
                 
 
                 foreach($autobesitzer as $temp){
+                   
                     echo "<tr>";
                         $temp->addAuto($autoname);
                         echo "<td>"; echo $temp->getVorname(); echo "</td>";
@@ -71,8 +88,8 @@
              
             $_SESSION['besitzer']=$autobesitzer;              
               
-     }
-
+     
+            }
        
  
  
