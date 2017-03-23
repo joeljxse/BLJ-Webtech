@@ -1,3 +1,4 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #diagramm {
     border: 2px solid black;
     width: 100%;
@@ -13,10 +14,14 @@
 
 body {
     background-color: lightgoldenrodyellow;
+    
+    font-family: 'Roboto', sans-serif;
+
 }
 
 #calculator button{
-    padding:0.4%  1%;
+    padding:2.1%;
+
 
 }
 
@@ -31,4 +36,16 @@ body {
 
 #calculator p {
     font-size: 1.5rem;
+}
+
+#calc2 {
+    text-align: center;
+}
+
+#result {
+    font-size: 1.3rem;
+}
+
+#balken {
+    text-align: left;
 }
