@@ -65,7 +65,7 @@
              
             echo '<table id="ausgabe" >';
                  echo "<tr>";
-                 echo "<th class='bye'><th id='imhaus'><i> Autos im Haus: </i></th></th><th class='bye'></th>";
+                 echo "<th id='imhaus'><i> Autos im Haus: </i></th></th><th class='bye'></th><th class='bye'></th>";
                   echo "</tr>";
                 echo "<tr>";
                     echo "<th>Vorname</th>";

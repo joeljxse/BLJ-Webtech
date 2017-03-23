@@ -16,7 +16,7 @@
                        
                     </nav>
         <?php
-                // error_reporting(0);
+                //  error_reporting(0);
                  include_once('functions.php');
 
 
