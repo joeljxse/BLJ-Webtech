@@ -6,10 +6,18 @@ var plus = document.getElementById("plus");
 var minus = document.getElementById("minus");
 var mal = document.getElementById("mal");
 var geteilt = document.getElementById("geteilt");
+var alert = document.getElementById("alert");
+
+alert.addEventListener("click",function(){
+    alert("You have been alerted.");
+    resultatDiv.innerHTML="ente";
+    
+});
 
 
 // Das Event für das Plus-Rechnen
 plus.addEventListener("click",function(){
+    
     
     // Die Zahlen werden in die Variablen übergeben
     var zahl1 = document.getElementById("zahl1").value;
@@ -17,7 +25,13 @@ plus.addEventListener("click",function(){
 
     // Überprüft, dass zwei Zahlen eingegeben wurden
     if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+        if (!zahl1){
+         document.getElementById("zahl1").value = "Hier auch noch!";
+        }
+        
+        if  (!zahl2){
+         document.getElementById("zahl2").value = "Hier auch noch!";
+        }
     }
 
     
@@ -44,9 +58,15 @@ plus.addEventListener("click",function(){
 minus.addEventListener("click",function(){
     var zahl1 = document.getElementById("zahl1").value;
     var zahl2 = document.getElementById("zahl2").value;
-
+        
     if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+         if (!zahl1){
+         document.getElementById("zahl1").value = "Hier auch noch!";
+        }
+        
+         if (!zahl2){
+         document.getElementById("zahl2").value = "Hier auch noch!";
+        }
     }
     else {
         zahl1 = parseInt(zahl1);
@@ -65,8 +85,8 @@ minus.addEventListener("click",function(){
         
         //Wenn es ein Minus ist (negatives Resultat ) wird ein Error ausgegeben
         if (test1=="-"){
-            document.getElementById("balken").style.width= "0%";
-            document.getElementById("balken").innerHTML="ERROR";
+            document.getElementById("zahl1").value="ERROR";
+            document.getElementById("zahl2").value="ERROR";
       }
       else {
                 prozentBerechnen(resultat);
@@ -80,7 +100,13 @@ mal.addEventListener("click",function(){
     var zahl2 = document.getElementById("zahl2").value;
 
     if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+        if (!zahl1){
+         document.getElementById("zahl1").value = "Hier auch noch!";
+        }
+        
+         if (!zahl2){
+         document.getElementById("zahl2").value = "Hier auch noch!";
+        }
     }
     else {
         zahl1 = parseInt(zahl1);
@@ -101,7 +127,13 @@ geteilt.addEventListener("click",function(){
     var zahl2 = document.getElementById("zahl2").value;
 
     if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+         if (!zahl1){
+         document.getElementById("zahl1").value = "Hier auch noch!";
+        }
+        
+         if (!zahl2){
+         document.getElementById("zahl2").value = "Hier auch noch!";
+        }
     }
     else {
         zahl1 = parseInt(zahl1);
@@ -125,6 +157,10 @@ function prozentBerechnen(resultat){
 
         //Wenn die Länge des Resultats 2 oder kleiner ist (die Zahl ist kleiner als 100)
         var length = resultat.toString().length;
+       
+
+      
+        
         if (length <= 2){
             var prozent = 100 / 100 * resultat;
         }
@@ -174,9 +210,11 @@ function prozentBerechnen(resultat){
                             
                         }
                 }
-                
         
-        document.getElementById("balken").style.width= prozent + "%";
-        document.getElementById("balken").innerHTML=prozent + "%";
-        resultatDiv.innerHTML="Resultat: "+ resultat;
+                
+        testingDiv.innerHTML=prozent;
+        document.getElementById("innercircle").style.height=  prozent+ "%";
+        document.getElementById("innercircle").style.width= prozent + "%";
+        
+   
 }
