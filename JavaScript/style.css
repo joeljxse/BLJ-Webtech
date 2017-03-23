@@ -1,0 +1,34 @@
+#diagramm {
+    border: 2px solid black;
+    width: 100%;
+    height: 30px;
+    
+}
+
+#balken {
+    background-color: red;
+    height: 100%;
+    
+}
+
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+#calculator button{
+    padding:0.4%  1%;
+
+}
+
+#calculator  {
+    text-align: center;
+    margin: 10% auto;
+}
+
+#calculator input {
+    padding: 2%;
+}
+
+#calculator p {
+    font-size: 1.5rem;
+}
