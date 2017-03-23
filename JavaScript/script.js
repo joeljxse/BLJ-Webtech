@@ -30,8 +30,94 @@ plus.addEventListener("click",function(){
 
         var resultat = zahl1 + zahl2;
 
+        prozentBerechnen(resultat); 
+    }
+    
+});
 
-        //Konvertiert das Resultat zu einem String (für nachher)
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+// Die anderen drei Operationen sind genau gleich ausser, dass bei minus die negativen Zahlen noch zu einem Error umfunktioniert werden
+// und die Operanden gewechelt werden (resultat = zahl1 + zahl2 wird zu resultat = zahl1 - zahl2 zum Beispiel)
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+minus.addEventListener("click",function(){
+    var zahl1 = document.getElementById("zahl1").value;
+    var zahl2 = document.getElementById("zahl2").value;
+
+    if(!zahl1 || !zahl2){
+        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+    }
+    else {
+        zahl1 = parseInt(zahl1);
+        zahl2 = parseInt(zahl2);
+        
+
+        var resultat = zahl1 - zahl2;
+         var length = resultat.toString().length;
+
+        var resultatStr = resultat.toString();
+        var hunderterStelle = parseInt(resultatStr.charAt(resultatStr.length - 3));
+        
+       
+        // Das erste Zeichen wird ausgelesen vom Resultat
+        var  test1 = resultat.toString().charAt(0);
+        
+        //Wenn es ein Minus ist (negatives Resultat ) wird ein Error ausgegeben
+        if (test1=="-"){
+            document.getElementById("balken").style.width= "0%";
+            document.getElementById("balken").innerHTML="ERROR";
+      }
+      else {
+                prozentBerechnen(resultat);
+      }
+    }
+});
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mal.addEventListener("click",function(){
+    var zahl1 = document.getElementById("zahl1").value;
+    var zahl2 = document.getElementById("zahl2").value;
+
+    if(!zahl1 || !zahl2){
+        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+    }
+    else {
+        zahl1 = parseInt(zahl1);
+        zahl2 = parseInt(zahl2);
+        
+        var resultat = zahl1 * zahl2;
+       
+       prozentBerechnen(resultat);
+    }
+     
+    
+});
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+geteilt.addEventListener("click",function(){
+    var zahl1 = document.getElementById("zahl1").value;
+    var zahl2 = document.getElementById("zahl2").value;
+
+    if(!zahl1 || !zahl2){
+        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
+    }
+    else {
+        zahl1 = parseInt(zahl1);
+        zahl2 = parseInt(zahl2);
+        
+        var resultat = zahl1 / zahl2;
+            prozentBerechnen(resultat);
+    }
+     
+    
+});
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function prozentBerechnen(resultat){
+
+          //Konvertiert das Resultat zu einem String (für nachher)
         var resultatStr = resultat.toString();
 
         //Lest die Hunderterstelle aus dem Resultat aus (die dritte von rechts)
@@ -89,235 +175,8 @@ plus.addEventListener("click",function(){
                         }
                 }
                 
-            
-
-        // Dem roten Balken wird die Länge zugewiesen und das Resultat wird ausgegeben        
+        
         document.getElementById("balken").style.width= prozent + "%";
         document.getElementById("balken").innerHTML=prozent + "%";
         resultatDiv.innerHTML="Resultat: "+ resultat;
-
-       
-    }
-     
-    
-});
-
-
-//-------------------------------------------------------------------------------------------------------------------------------------
-// Die anderen drei Operationen sind genau gleich ausser, dass bei minus die negativen Zahlen noch zu einem Error umfunktioniert werden
-// und die Operanden gewechelt werden (resultat = zahl1 + zahl2 wird zu resultat = zahl1 - zahl2 zum Beispiel)
-//--------------------------------------------------------------------------------------------------------------------------------------
-
-minus.addEventListener("click",function(){
-    var zahl1 = document.getElementById("zahl1").value;
-    var zahl2 = document.getElementById("zahl2").value;
-
-    if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
-    }
-    else {
-        zahl1 = parseInt(zahl1);
-        zahl2 = parseInt(zahl2);
-        
-
-        var resultat = zahl1 - zahl2;
-         var length = resultat.toString().length;
-
-        var resultatStr = resultat.toString();
-        var hunderterStelle = parseInt(resultatStr.charAt(resultatStr.length - 3));
-        
-       
-        // Das erste Zeichen wird ausgelesen vom Resultat
-        var  test1 = resultat.toString().charAt(0);
-        
-        //Wenn es ein Minus ist (negatives Resultat ) wird ein Error ausgegeben
-        if (test1=="-"){
-            document.getElementById("balken").style.width= "0%";
-            document.getElementById("balken").innerHTML="ERROR";
-      }
-      else {
-      if (length <= 2){
-            var prozent = 100 / 100 * resultat;
-        }
-        else {
-           
-                if (resultatStr.charAt(resultatStr.length-4)==""){
-                    var prozent = resultat * 100 / ((hunderterStelle+1)*100);
-                }
-                else {
-                    var laengeFuerGrosseZahlen = resultatStr.length - 3;
-                   
-
-                   
-
-                     for (var i = 0; i <=laengeFuerGrosseZahlen-1; i++){
-                         if (i==0){
-                         var anfangNaechsterHunderter =  resultatStr.charAt(i); 
-                         
-                        }
-                        else {
-                            var anfangNaechsterHunderter = anfangNaechsterHunderter + resultatStr.charAt(i); 
-                            
-                        }
-                          
-                     }
-
-                    var naechsterHunderter = resultatStr.charAt(resultatStr.length-3)* 100;
-                    naechsterHunderter = naechsterHunderter + 100;
-                    
-                    
-                    var ganzerNaechsterHunderter = anfangNaechsterHunderter + naechsterHunderter; 
-                    
-                    var prozent = resultat * 100 / parseInt(ganzerNaechsterHunderter);
-                    
-                }
-
-        }
-        
-
-        document.getElementById("balken").style.width= prozent + "%";
-        document.getElementById("balken").innerHTML=prozent + "%";
-        resultatDiv.innerHTML="Resultat: " + resultat;
-    }
-    }
-
-});
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-mal.addEventListener("click",function(){
-    var zahl1 = document.getElementById("zahl1").value;
-    var zahl2 = document.getElementById("zahl2").value;
-
-    if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
-    }
-    else {
-        zahl1 = parseInt(zahl1);
-        zahl2 = parseInt(zahl2);
-        
-        var resultat = zahl1 * zahl2;
-        var length = resultat.toString().length;
-
-        var resultatStr = resultat.toString();
-        var hunderterStelle = parseInt(resultatStr.charAt(resultatStr.length - 3));
-
-
-        if (length <= 2){
-            var prozent = 100 / 100 * resultat;
-        }
-        else {
-            
-                if (resultatStr.charAt(resultatStr.length-4)==""){
-                    var prozent = resultat * 100 / ((hunderterStelle+1)*100);
-                }
-                else {
-                    var laengeFuerGrosseZahlen = resultatStr.length - 3;
-                   
-
-                   
-
-                     for (var i = 0; i <=laengeFuerGrosseZahlen-1; i++){
-                         if (i==0){
-                         var anfangNaechsterHunderter =  resultatStr.charAt(i); 
-                         
-                        }
-                        else {
-                            var anfangNaechsterHunderter = anfangNaechsterHunderter + resultatStr.charAt(i); 
-                            
-                        }
-                          
-                     }
-
-                    var naechsterHunderter = resultatStr.charAt(resultatStr.length-3)* 100;
-                    naechsterHunderter = naechsterHunderter + 100;
-                    
-                    
-                    var ganzerNaechsterHunderter = anfangNaechsterHunderter + naechsterHunderter; 
-                    
-                    var prozent = resultat * 100 / parseInt(ganzerNaechsterHunderter);
-                    
-                }
-        }
-        
-       
-
-
-        document.getElementById("balken").style.width= prozent + "%";
-        document.getElementById("balken").innerHTML=prozent + "%";
-        resultatDiv.innerHTML="Resultat: "+ resultat;
-
-       
-    }
-     
-    
-});
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-geteilt.addEventListener("click",function(){
-    var zahl1 = document.getElementById("zahl1").value;
-    var zahl2 = document.getElementById("zahl2").value;
-
-    if(!zahl1 || !zahl2){
-        resultatDiv.innerHTML="Bitte in beide Felder eine Zahl eingeben.";
-    }
-    else {
-        zahl1 = parseInt(zahl1);
-        zahl2 = parseInt(zahl2);
-        
-        var resultat = zahl1 / zahl2;
-        var length = resultat.toString().length;
-
-        var resultatStr = resultat.toString();
-        var hunderterStelle = parseInt(resultatStr.charAt(resultatStr.length - 3));
-
-
-        if (length <= 2){
-            var prozent = 100 / 100 * resultat;
-        }
-        else {
-            
-                if (resultatStr.charAt(resultatStr.length-4)==""){
-                    var prozent = resultat * 100 / ((hunderterStelle+1)*100);
-                }
-                else {
-                    var laengeFuerGrosseZahlen = resultatStr.length - 3;
-                   
-
-                   
-
-                     for (var i = 0; i <=laengeFuerGrosseZahlen-1; i++){
-                         if (i==0){
-                         var anfangNaechsterHunderter =  resultatStr.charAt(i); 
-                         
-                        }
-                        else {
-                            var anfangNaechsterHunderter = anfangNaechsterHunderter + resultatStr.charAt(i); 
-                            
-                        }
-                          
-                     }
-
-                    var naechsterHunderter = resultatStr.charAt(resultatStr.length-3)* 100;
-                    naechsterHunderter = naechsterHunderter + 100;
-                    
-                    
-                    var ganzerNaechsterHunderter = anfangNaechsterHunderter + naechsterHunderter; 
-                    
-                    var prozent = resultat * 100 / parseInt(ganzerNaechsterHunderter);
-                    
-                }
-        }
-        
-       
-
-
-        document.getElementById("balken").style.width= prozent + "%";
-        document.getElementById("balken").innerHTML=prozent + "%";
-        resultatDiv.innerHTML="Resultat: "+ resultat;
-
-       
-    }
-     
-    
-});
+}
