@@ -6,10 +6,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
-        <?php include_once("functions.php"); ?>
+        <?php include_once("functions.php");
+            $username = htmlspecialchars($_POST["username"]);
+            $versuche = htmlspecialchars($_POST["versucheForDB"]);
+            
+
+            if($username != ""){
+                    
+           
+                
+                db_connect();
+                db_write($username,$versuche);
+                db_read();
+                db_close();
+            
+            }
+            
+        
+         ?>
         <script>
             $(document).ready(function(){
-                   
+
+                    
                     var zaehler = 0;
                     var srcPic1;
                     var idPic1;
@@ -18,6 +36,8 @@
 
                     var punktzahl = 0;
                     var versuche = 0;
+                    
+
                    $(".memoryCard").on("click",function(){
                         var id = $(this).attr('id');
                         var src = $("#"+id+"i").attr('src');
@@ -54,13 +74,15 @@
                                             $("#punktzahlH2").html("Punktzahl: "+punktzahl);
                                             zaehler = 0;
                                             
-                                            $("#versucheH2").html("Versuche: "+versuche);
+                                            $("#versucheH2").css("name",versuche);
+                                            $("#versucheForDB").html(versuche);
                                     }
                                     else {
                                         $(".memoryPic").css("display","none");
                                         zaehler = 0;
                                         versuche++;
                                         $("#versucheH2").html("Versuche: "+versuche);
+                                        $("#versucheForDB").css("name",versuche);
                                     }
                          }
                         
@@ -70,7 +92,6 @@
 
             });
 
-            
         </script>
 
         
@@ -120,7 +141,9 @@
             </tr>
             </table>
             <form action="index.php" method="POST">
-                <input type="submit"  value="Rangliste eintragen / aktualisieren">
+                <input type="text" name="username" placeholder="Username...">
+                <input type="submit"  onclick="eintragen()" value="Rangliste eintragen / aktualisieren">
+                <input type="text" name="versucheForDB" ></input>
             </form>
         </div>
         <div id="scriptDiv">
