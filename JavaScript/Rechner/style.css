@@ -73,8 +73,13 @@ body {
     text-align: left;
 }
 
-#alert {
+#ente {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+
+#entejpg {
+    width: 100px;
 }

@@ -6,15 +6,33 @@ var plus = document.getElementById("plus");
 var minus = document.getElementById("minus");
 var mal = document.getElementById("mal");
 var geteilt = document.getElementById("geteilt");
-var alert = document.getElementById("alert");
+var ente = document.getElementById("ente");
+var anzeige = document.getElementById("anzeige");
 
-alert.addEventListener("click",function(){
-    alert("You have been alerted.");
-    resultatDiv.innerHTML="ente";
+
+ente.addEventListener("click",function(){
+    document.getElementById("zahl1").value = "Quack";
+    document.getElementById("zahl2").value = "Quack";
+    document.getElementById("pForResult").innerHTML="Resultat: Quack";
+    testingDiv.innerHTML="Quack %";
+    alert("Quack");
     
 });
 
-
+var i = 0;
+ente.addEventListener("mouseover",function(){
+    
+    if (i==0){
+        alert("Hover über mich um die Felder zu leeren! ");
+        i = 1;
+    }
+    else{
+    document.getElementById("zahl1").value = "";
+    document.getElementById("zahl2").value = "";
+    document.getElementById("pForResult").innerHTML="Resultat: ";
+    testingDiv.innerHTML="";
+    }
+});
 // Das Event für das Plus-Rechnen
 plus.addEventListener("click",function(){
     
@@ -32,8 +50,10 @@ plus.addEventListener("click",function(){
         if  (!zahl2){
          document.getElementById("zahl2").value = "Hier auch noch!";
         }
-    }
 
+        
+    }
+    
     
     else {
 
@@ -50,12 +70,13 @@ plus.addEventListener("click",function(){
 });
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------
-// Die anderen drei Operationen sind genau gleich ausser, dass bei minus die negativen Zahlen noch zu einem Error umfunktioniert werden
-// und die Operanden gewechelt werden (resultat = zahl1 + zahl2 wird zu resultat = zahl1 - zahl2 zum Beispiel)
-//--------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+// Die anderen drei Operationen sind genau gleich ausser, dass bei minus die negativen Zahlen noch zu einem Error umfunktioniert werden, 
+//Resultate mit Nachkommastellen gerundet werden und die Operanden gewechelt werden (resultat = zahl1 + zahl2 wird zu resultat = zahl1 - zahl2 zum Beispiel)
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 minus.addEventListener("click",function(){
+    
     var zahl1 = document.getElementById("zahl1").value;
     var zahl2 = document.getElementById("zahl2").value;
         
@@ -114,6 +135,7 @@ mal.addEventListener("click",function(){
         
         var resultat = zahl1 * zahl2;
        
+      
        prozentBerechnen(resultat);
     }
      
@@ -140,6 +162,12 @@ geteilt.addEventListener("click",function(){
         zahl2 = parseInt(zahl2);
         
         var resultat = zahl1 / zahl2;
+
+        // Rundet Ergebnis bei Kommazahlen
+        if (resultat.toString().includes(".")){
+           resultat= Math.round(resultat);
+            
+        }
             prozentBerechnen(resultat);
     }
      
@@ -149,9 +177,13 @@ geteilt.addEventListener("click",function(){
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function prozentBerechnen(resultat){
 
-          //Konvertiert das Resultat zu einem String (für nachher)
+
+        
+
+        //Konvertiert das Resultat zu einem String (für nachher)
         var resultatStr = resultat.toString();
 
+        
         //Lest die Hunderterstelle aus dem Resultat aus (die dritte von rechts)
         var hunderterStelle = parseInt(resultatStr.charAt(resultatStr.length - 3));
 
@@ -211,10 +243,17 @@ function prozentBerechnen(resultat){
                         }
                 }
         
-                
-        testingDiv.innerHTML=prozent;
+        if (isNaN(prozent)){
+            
+            testingDiv.innerHTML="Ente";
+            
+        }
+        else {
+        testingDiv.innerHTML=prozent + "%";
         document.getElementById("innercircle").style.height=  prozent+ "%";
         document.getElementById("innercircle").style.width= prozent + "%";
-        
+        document.getElementById("pForResult").innerHTML= "Resultat: " + resultat;
+
+        }
    
 }
