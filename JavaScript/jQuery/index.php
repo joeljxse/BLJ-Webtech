@@ -6,24 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
-        <?php include_once("functions.php");
-            $username = htmlspecialchars($_POST["username"]);
-            $versuche = htmlspecialchars($_POST["versucheForDB"]);
-            
-
-            if($username != ""){
-                    
-           
-                
-                db_connect();
-                db_write($username,$versuche);
-                db_read();
-                db_close();
-            
-            }
-            
-        
-         ?>
+      
         <script>
             $(document).ready(function(){
 
@@ -38,6 +21,10 @@
                     var versuche = 0;
                     
 
+                    // Zusammengesetzte IDs:
+                    // jeweiliges <td> Element hat als ID eine Zahl und das Bild darauf diese Zahl + i
+                    // Hier wird auf Click auf das <td> die ID vom Bild ausgewählt
+                    
                    $(".memoryCard").on("click",function(){
                         var id = $(this).attr('id');
                         var src = $("#"+id+"i").attr('src');
